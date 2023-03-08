@@ -1,0 +1,71 @@
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<body>
+<!-- ----------- BODY CONTENT ----------- -->
+<h6 style="text-align:right; background-color:#800000;padding:5px 10px 5px 20px;color:white;font-size:18px"><i class="fa-solid fa-user"></i> Welcome Back, {{ admin }}</h6>
+<div class="row" style="margin-left:0px;">
+<div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+    <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+        <p><a href="adminprofile" style="text-decoration:none; color:white;">Home</a></p>
+    </div>
+    <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+        <p><a href="addhospitals" style="text-decoration:none; color:white;">Add Hospitals</a></p>
+    </div>
+    <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+        <p><a href="bloodrequest" style="text-decoration:none; color:white;">Blood Requests</a></p>
+    </div>
+    <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+        <p><a href="donorrequest" style="text-decoration:none; color:white;">Donor Requests</a></p>
+    </div>
+    <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+        <p><a href="adminsendrequest" style="text-decoration:none; color:white;">Send Request</a></p>
+    </div>
+    <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+        <p><a href="getusers" style="text-decoration:none; color:white;">Edit Users</a></p>
+    </div>
+</div><br><br>
+        <div class="col-md-10 procedure">
+            <div class="row" style="margin-top:40px;text-align:center;">
+                <div class="shadow-lg col-md-4" style="height:200px;margin-left:100px;text-align:center;background-color:#2D2120;">
+                <a href="{% url 'patients' %}" style="text-decoration:none;">
+                    <p style="color:red;font:30px bold;margin-top:50px;"><i class="fa fa-heartbeat" aria-hidden="true"></i> TOTAL REQUESTS SATISFIED</p>
+                    <p style="text-align:center;font:30px bold;color:white;">{{ approvedcount }}</p></a></div>
+                <div class="col-md-1"></div>
+                <div class="shadow-lg col-md-4" style="height:200px;margin-left:40px;text-align:center;background-color:#2D2120;">
+                <a href="{% url 'donors' %}" style="text-decoration:none;">
+                    <p style="color:red;font:30px bold;margin-top:50px;"><i class="fa fa-tint" aria-hidden="true"></i> TOTAL DONORS</p>
+                    <p style="text-align:center;font:30px bold;color:white;">{{ approveddonors }}</p></a></div>
+            </div>
+            <div class="row" style="margin-top:40px;text-align:center;">
+                <div class="shadow-lg col-md-4" style="height:200px;margin-left:100px;text-align:center;background-color:#2D2120;">
+                <a href="donorrequest" style="text-decoration:none;">
+                    <p style="color:red;font:30px bold;margin-top:50px;"><i class="fa fa-heartbeat" aria-hidden="true"></i> PENDING DONOR REQUESTS</p>
+                    <p style="text-align:center;font:30px bold;color:white;">{{ totaldonorpending }}</p></a></div>
+                <div class="col-md-1"></div>
+                <div class="shadow-lg col-md-4" style="height:200px;margin-left:40px;text-align:center;background-color:#2D2120;">
+                <a href="bloodrequest" style="text-decoration:none;">
+                    <p style="color:red;font:30px bold;margin-top:50px;"><i class="fa fa-tint" aria-hidden="true"></i> PENDING BLOOD REQUESTS</p>
+                    <p style="text-align:center;font:30px bold;color:white;">{{ totalbloodpending }}</p></a></div>
+            </div>
+        </div>
+</div>
+<div class="row" style="display:none;">
+        <div class="col-12">
+            <p style="margin-left:30px;"> {% for item in queryset %}
+                    {{ item.d_bloodgroup }} --> {{ item.count }}
+                {% endfor %}</p>
+            <p style="margin-lwft:30px;"> {% for item in queryset1 %}
+                    {{ item.p_blood_needed }} --> {{ item.count }}
+                {% endfor %}</p>
+                {% for i in table1 %}
+                    {% if i in table2 %}
+                        <p style="margin-lwft:30px;" id="output">
+                            {{ i }} ==> {{ count }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+        </div>
+    </div><br><br>
+<!-- FOOTER HERE -->
+</body>
+{% endblock %}

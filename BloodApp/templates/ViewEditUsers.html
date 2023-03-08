@@ -1,0 +1,62 @@
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<body>
+<div class="row" style="margin-left:0px;margin-top:8px;">
+  <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+      <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+          <p><a href="adminprofile" style="text-decoration:none; color:white;">Home</a></p>
+      </div>
+      <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+          <p><a href="addhospitals" style="text-decoration:none; color:white;">Add Hospitals</a></p>
+      </div>
+      <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+          <p><a href="bloodrequest" style="text-decoration:none; color:white;">Blood Requests</a></p>
+      </div>
+      <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+          <p><a href="donorrequest" style="text-decoration:none; color:white;">Donor Requests</a></p>
+      </div>
+      <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+          <p><a href="adminsendrequest" style="text-decoration:none; color:white;">Send Request</a></p>
+      </div>
+      <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+          <p><a href="getusers" style="text-decoration:none; color:white;">Edit Users</a></p>
+      </div>
+  </div>
+  <div class="col-md-10" align="center">
+    <h3>View and Remove Users</h3>
+    <table class="table table-striped table-light">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Blood Group</th>
+          <th>Phone</th>
+          <th>City</th>
+          <th>Health</th>
+          <th>Zip Code</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in view_data %}
+        <tr>
+          <td>{{data.full_name}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.age}}</td>
+          <td>{{data.gender}}</td>
+          <td>{{data.blood}}</td>
+          <td>{{data.phone}}</td>
+          <td>{{data.city}}</td>
+          <td>{{data.health}}</td>
+          <td>{{data.zip}}</td>
+          <td><a href="{% url 'delete' data.id %}" class="btn btn-danger">Delete</a> </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div><br><br>
+</body>
+{% endblock %}

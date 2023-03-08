@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Blood Donation</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6">
+        <img src="/static/images/nevonLogo-nobg.png" alt="logo" width="630" height="380" style="padding:20px 0px 0px 90px;">
+    </div>
+    <div class="col-md-6"><br>
+        <h2>Sign In To Donate or Request Blood</h2><br>
+        <div>
+            <form class="row g-2" action="funcsignins" method="post" style="text-align:left">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="full_name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name" value="{{ getfullnamedata }}">
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                      <label for="phone" class="form-label">Mobile</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" value="{{ getphonedata }}" placeholder="91+ XXXXXXXXXX">
+                  </div></div>
+                <div class="row">
+                    <div class="col-md-4">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" name="password" id="password">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4"><br>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        Remember Me
+                      </label>
+                    </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4"><br>
+                      <button type="submit" class="btn btn-success">Sign In</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+                      <h6 style="font-size:20px">New User? <a href="register">Register</a></h6>
+                  </div>
+              </div>
+            </form>
+        </div><br>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>

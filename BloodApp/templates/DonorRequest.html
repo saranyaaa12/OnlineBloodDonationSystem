@@ -1,0 +1,57 @@
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<body>
+<div class="row" style="margin-left:0px;margin-top:8px;">
+    <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="adminprofile" style="text-decoration:none; color:white;">Home</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="addhospitals" style="text-decoration:none; color:white;">Add Hospitals</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="bloodrequest" style="text-decoration:none; color:white;">Blood Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="donorrequest" style="text-decoration:none; color:white;">Donor Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="adminsendrequest" style="text-decoration:none; color:white;">Send Request</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="getusers" style="text-decoration:none; color:white;">Edit Users</a></p>
+        </div>
+    </div>
+<!--  -------------- MAIN CONTENT ---------------- -->
+    <div class="col-md-10" align="center">
+        <h3>View Donor Requests</h3>
+        <table class="table table-striped " style='text-align:center;font-family: "Open Sans", sans-serif; font-size:18px;'>
+              <thead>
+                <tr style="height:60px;">
+                  <th>Donor Name</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Contact Number</th>
+                  <th>Blood Group</th>
+                  <th>Health Issues, If Any</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for data in donor_data %}
+                <tr style="height:80px;">
+                  <td>{{data.d_name}}</td>
+                  <td>{{data.d_age}}</td>
+                  <td>{{data.d_gender}}</td>
+                  <td>{{data.d_contact}}</td>
+                  <td>{{data.d_bloodgroup}}</td>
+                  <td>{{data.d_healthissues}}</td>
+                  <td><a href="{% url 'acceptdonor' data.id data.d_contact %}" class="btn btn-success">Accept</a>     <a href="{% url 'rejectdonor' data.id data.d_contact %}" class="btn btn-danger">Reject</a> </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+    </div>
+</div><br><br>
+</body>
+{% endblock %}

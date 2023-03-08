@@ -1,0 +1,81 @@
+{% extends 'Index.html' %}
+{% block content %}
+<head>
+    <style>
+        h2{
+            text-align:center;
+            font-size:50px;
+            color:#2D2124;
+            background-color:#FFE4E1;
+            padding:20px;
+        }
+        p {
+            font-size:20px;
+        }
+        h4 {
+          font:35px bold;
+          color:#BC1000;
+        }
+        .phototext{
+          font-size:16px;
+          color:#2D2124;
+          text-align:center;
+        }
+    </style>
+</head>
+<body><br>
+<h2>NEVON FOUNDATION</h2>
+<div class="row"  style="margin:20px;">
+    <div class="col-md-9">
+        <br>
+        <h4>Hello, Visitor!</h4>
+        <br>
+        <p>Welcome to our blood donation organizing foundation! We are a non-profit organization dedicated to saving lives by facilitating blood donation drives and ensuring that blood is available when it is needed.</p>
+        <br>
+        <p>Our foundation was founded on the belief that every single blood donation can make a difference in someone's life. By organizing blood donation drives and educating people about the importance of donating blood, we aim to make a positive impact on our community.</p>
+    </div>
+    <div class="col-md-3">
+        <br>
+        <img src="/static/images/volunteers2.jfif" width="340" height="250">
+        <p class="phototext">Group of Donors receiving certificates</p>
+    </div>
+</div>
+<div class="row"  style="margin-left:20px;">
+    <div class="col-md-3">
+        <img src="/static/images/volunteers3.jfif" width="340" height="250">
+        <p class="phototext">Volunteers from US for an awareness drive</p>
+    </div>
+    <div class="col-md-9">
+    <p>We work closely with hospitals and blood banks to ensure that donated blood is distributed efficiently to those in need. Our team of dedicated volunteers and staff members work tirelessly to make the blood donation process as smooth and stress-free as possible.</p>
+        <br>
+        <p>At our foundation, we believe that everyone has the potential to become a blood donor. Whether you're a first-time donor or a regular donor, we welcome everyone who is willing to make a difference. We offer support and guidance throughout the donation process and ensure that your donation is handled safely and responsibly.</p>
+        <br>
+    </div>
+</div>
+<div class="row"  style="margin-left:20px;">
+    <div class="col-md-11">
+        <p>We also work to raise awareness about the importance of donating blood and encourage people to become regular donors. By spreading the word and educating people about the benefits of donating blood, we hope to increase the number of donors and save more lives.</p>
+        <br>
+        <p><b>Thank you for visiting our website and learning about our foundation. We hope that you will consider joining us in our mission to save lives through blood donation.</b></p>
+        <br>
+    </div>
+</div>
+<div class="row"  style="margin-left:40px;" >
+    <div class="col-md-3" style="margin:40px;">
+        <img src="/static/images/volunteers.jfif" width="360" height="250">
+    </div>
+    <div class="col-md-3" style="margin:40px;">
+        <img src="/static/images/volunteers4.jfif" width="360" height="250">
+    </div>
+    <div class="col-md-3" style="margin:40px;">
+        <img src="/static/images/volunteers5.jfif" width="360" height="250">
+    </div>
+</div>
+<div class="row" style="margin-left:40px;text-align:center;" >
+    <p style="font-size:18px;">Ready to save lifes? Donate now by signing in</p>
+    <a href="signin"> <button type="submit" class="btn btn-danger rounded-pill"><i class="fa-sharp fa-solid fa-droplet"></i> Donate</button></a>
+</div>
+<br><br>
+
+</body>
+{% endblock %}

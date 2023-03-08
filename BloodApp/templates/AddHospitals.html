@@ -1,0 +1,58 @@
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<body>
+<div class="row" style="margin-left:0px;margin-top:8px;">
+    <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="adminprofile" style="text-decoration:none; color:white;">Home</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="addhospitals" style="text-decoration:none; color:white;">Add Hospitals</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="bloodrequest" style="text-decoration:none; color:white;">Blood Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="donorrequest" style="text-decoration:none; color:white;">Donor Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="adminsendrequest" style="text-decoration:none; color:white;">Send Request</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="getusers" style="text-decoration:none; color:white;">Edit Users</a></p>
+        </div>
+    </div>
+<!--  -------------- MAIN CONTENT ---------------- -->
+    <div class="col-md-8" align="center">
+        <h2>Add Hospitals</h2>
+            <div>
+                <form class="row g-2" action="funcaddhospital" method="post" style="text-align:left;">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="hospital" class="form-label">Hospital Name/Camp</label>
+                            <input type="text" class="form-control" id="hospital" name="hospital">
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                          <label for="area" class="form-label">Area/Locality</label>
+                          <input type="text" class="form-control" id="area" name="area">
+                      </div></div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <label for="contact" class="form-label">Contact Number</label>
+                          <input type="tel" class="form-control" name="contact" id="contact">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-8"><br>
+                          <button type="submit" class="btn btn-success">Add</button>
+                      </div>
+                  </div>
+                </form>
+            </div><br>
+    </div>
+</div><br><br>
+</body>
+{% endblock %}

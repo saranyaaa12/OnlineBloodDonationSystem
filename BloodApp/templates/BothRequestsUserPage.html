@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Foundation</title>
+    <link href="static/css/usersidebar.css" rel="stylesheet">
+</head>
+<body>
+<!-- HEADER HERE  -->
+<!-- BODY CONTENT -->
+<h6 style="text-align:right; background-color:#2D2123;padding:18px;color:white;font-size:18px"><i class="fa-solid fa-user"></i></h6>
+
+<input type="checkbox" id="check">
+<label for="check">
+        <i class="fa fa-bars" id="btn"></i>
+        <i class="fa fa-times" id="close"></i>
+</label>
+
+<div class="navigation col-md-3">
+    <header>MENU</header>
+    <ul>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userprofile">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userviewhospital">
+                <span class="icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                <span class="title">View Hospitals</span>
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userbloodrequest">
+                <span class="icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
+                <span class="title">View Blood Requests</span>
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="bothrequests">
+                <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                <span class="title">Send Requests</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--
+<div class="toggle">
+    <i class="fa fa-bars open" aria-hidden="true"></i>
+    <i class="fa fa-times close" aria-hidden="true"></i>
+</div>
+
+ <div class="row" style="margin-left:0px;margin-top:8px;margin-bottom:8px;">
+    <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="userprofile" style="text-decoration:none; color:white;font-size:18px;">Home</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="viewhospitals" style="text-decoration:none; color:white;font-size:18px;">View Hospitals</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="userbloodrequest" style="text-decoration:none; color:white;font-size:18px;">View Blood Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="bothrequests" style="text-decoration:none; color:white;font-size:18px;">Send Requests</a></p>
+        </div>
+    </div> -->
+<!-- MAIN CONTENT -->
+<div id="maincontent">
+<div class="row">
+    <div class="col md-1"></div>
+    <div class="col-md-5">
+        <a href="userdonorrequest" class="btn btn-warning" style="width:500px;height:400px;"><h4 style="padding-top:150px;">Send Donor Request</h4><p style="padding-top:10px;">Become a Donor</p></a>
+    </div>
+    <div class="col-md-5">
+        <a href="usersendrequest" class="btn btn-danger" style="width:500px;height:400px;"><h4 style="padding-top:150px;">Send Blood Request</h4><p style="padding-top:10px;">Ask for Help</p></a>
+    </div>
+</div><br><br><br>
+</div>
+</body>
+{% endblock %}
+</html>

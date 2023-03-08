@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <style>
+        h3{
+            margin-top:20px;
+            margin-left:20px;
+        }
+    </style>
+</head>
+<body>
+<br>
+<div class="row shadow-lg" style="margin:30px;background-color:#f5eadf;">
+    <div class="col-md-3">
+        <a href="whatisblooddonation" style="text-decoration:none;color:black;">
+            <img src="/static/images/indiablood.png" width="300" height="200" style="margin:20px;">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{% url 'whydonateblood' %}" style="text-decoration:none;color:black;">
+            <h3 style="color:#2D2120">What is Blood Donation</h3>
+            <p>Blood donation is a voluntary procedure that can help save lives. There are several types of blood donation. Each type helps meet different medical needs.</p>
+            <p>These types of donations are performed using a process called apheresis. An apheresis machine is connected to both of your arms. It collects a small amount of blood and separates the components before returning the unused .....</p>
+            <p>Click to Read More....</p>
+        </a>
+    </div>
+</div>
+<br>
+
+<div class="row shadow-lg" style="margin:30px;background-color:#ede5e4;">
+    <div class="col-md-3">
+        <a href="whydonateblood" style="text-decoration:none;color:black;">
+            <img src="/static/images/donating.jfif" width="300" height="200" style="margin:20px;">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{% url 'whydonateblood' %}" style="text-decoration:none;color:black;">
+            <h3 style="color:#2D2120">Why Should I Donate Blood</h3>
+            <p>There’s no end to the benefits of donating blood for those who need it. According to the American Red Cross, one donation can save as many as three lives, and someone in the United States needs blood every two seconds.</p>
+            <p>You need to be 17 or older to donate whole blood. Some states allow you to donate at 16 with parental consent ......</p>
+            <p>Click to Read More....</p>
+        </a>
+    </div>
+</div>
+<br>
+
+<div class="row shadow-lg" style="margin:30px;background-color:#f5eadf;">
+    <div class="col-md-3">
+        <a href="apheresis" style="text-decoration:none;color:black;">
+            <img src="/static/images/apheresis.jfif" width="300" height="200" style="margin:20px;">
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a href="{% url 'apheresis' %}" style="text-decoration:none;color:black;">
+            <h3 style="color:#2D2120">Apheresis</h3>
+            <p>Blood donation is a voluntary procedure that can help save lives. There are several types of blood donation. Each type helps meet different medical needs.</p>
+            <p>These types of donations are performed using a process called apheresis. An apheresis machine is connected to both of your arms. It collects a small amount of blood and separates the components before returning the unused .....</p>
+            <p>Click to Read More....</p>
+        </a>
+    </div>
+</div>
+<br>
+
+</body>
+{% endblock %}
+</html>

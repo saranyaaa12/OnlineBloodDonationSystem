@@ -1,0 +1,82 @@
+{% extends 'Index.html' %}
+{% block content %}
+<head>
+  <style>
+      p,ul,li {
+        font-size:20px;
+      }
+      h4 {
+        font-size:35px;
+        color:#2D2123;
+      }
+      h2 {
+        font-size:38px;
+      }
+  </style>
+</head>
+<br>
+<div style="margin:20px;">
+<div class="row">
+  <div class="col-md-9">
+  <h2>What is Blood Donation</h2><br>
+  <h4>Overview</h4><hr>
+  <p>Blood donation is a voluntary procedure that can help save lives. There are several types of blood donation. Each type helps meet different medical needs.</p>
+  </div>
+  <div class="col-md-3 shadow-lg">
+    <img src="/static/images/indiablood.png" width="330" height="250">
+  </div>
+</div><br>
+<div class="row">
+  <div class="col-md-9">
+  <h4>Types of donation</h4><hr>
+  <p>There are few other types of donation that can be done with blood. The other types of donation include:</p>
+  <ul>
+    <li>platelet donation (plateletpheresis)</li>
+    <li>plasma donation (plasmapheresis)</li>
+    <li>double red cell donation</li>
+  </ul>
+  <p>These types of donations are performed using a process called <a href="apheresis">apheresis</a>. An apheresis machine is connected to both of your arms. It collects a small amount of blood and separates the components before returning the unused components back to you. This cycle is repeated several times over approximately two hours.</p>
+  <p>Once your donation is complete, you’ll be given a snack and a drink and be able to sit and rest for 10 or 15 minutes before you leave. If you feel faint or nauseous, you’ll be able to lie down until you feel better.</p>
+  </div>
+</div><br><br>
+<div class="row">
+  <div class="col-md-9">
+    <h4>Procedure</h4><hr>
+    <p>You must register to donate blood. This includes providing identification, your medical history, and undergoing a quick physical examination. You’ll also be given some information about blood donation to read.</p>
+    <p>Physical Examination and some blood tests might be taken to check for any other bloodborne infections. Because of the risk of bloodborne infections, not everyone can donate blood. </p>
+    <br>
+    <p>The following are groups that are not eligible to donate blood:</p>
+  </div>
+    <div class="col-md-3 shadow-lg" >
+      <a href="whydonateblood" style="text-align:center;text-decoration:none;">
+        <img src="/static/images/donating.jfif" width="300" height="250" style="padding-top:20px">
+        <p style="text-align:center;font-size:18px;color:black">Why Donate Blood</p>
+        <p style="font-size:14px;line-height:0.2">Click Here</p>
+      </a>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-9">
+    <ul>
+      <li>Anyone who has used injected drugs, steroids or another substance not prescribed by a health care provider in the past three months</li>
+      <li>Men who have had sexual contact with other men in the past three months</li>
+      <li>Anyone who has had a positive test for HIV</li>
+      <li>Anyone who, in the past 12 months, has had close contact with — lived with or had sexual contact with — a person who has viral hepatitis</li>
+      <li>Anyone who has had babesiosis, a rare and severe tick-borne disease, or the parasitic infection Chagas' disease</li>
+      <li>Anyone who has a congenital coagulation factor deficiency</li>
+    </ul>
+  <p>Once you’re ready after all of these in most cases, your blood donation procedure will begin. Whole blood donation is the most common type of donation. This is because it offers the most flexibility. It can be transfused as whole blood or separated into red cells, platelets, and plasma for different recipients.</p>
+  <p>For a whole blood donation procedure:</p>
+  <ol type="1">
+    <li>You’ll be seated in a reclining chair. You can donate blood either sitting or lying down.</li>
+    <li>A small area of your arm will be cleaned. A sterile needle will then be inserted.</li>
+    <li>You’ll remain seated or lying down while a pint of your blood is drawn. This takes 8 to 10 minutes.</li>
+    <li>When a pint of blood has been collected, a staff member will remove the needle and bandage your arm.</li>
+  </ol>
+  <h4>Results of Test and Distribution of Blood</h4><hr>
+  <p>Your blood will be tested to determine your blood type and your Rh factor. Blood type is classified as A, B, AB or O. The Rh factor refers to the presence or absence of a specific antigen — a substance capable of stimulating an immune response — in the blood. You'll be classified as Rh positive or Rh negative, meaning you do or don't carry the antigen. This information is important because your blood type and Rh factor must be compatible with the blood type and Rh factor of the person receiving your blood.</p>
+  <p>Your blood will also be tested for bloodborne diseases, such as hepatitis and HIV. If these tests are negative, the blood is distributed for use in hospitals and clinics. If any of these tests are positive, the donor center notifies you, and your blood is discarded.</p>
+  </div>
+</div>
+</div><br><br>
+{% endblock %}

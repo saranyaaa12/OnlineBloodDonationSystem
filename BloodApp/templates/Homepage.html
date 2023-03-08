@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>  <title>Nevon Blood Donation</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    <script src="{% static 'js/events.js' %}"></script>
+</head>
+<body>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+          <img src="static\images\carousal1.png" class="d-block w-100" alt="donate">
+          <div class="carousel-caption d-none d-md-block">
+            <a href="signin" target="_self"><button type="button" class="btn btn-dark rounded-pill" style="font-size:22px;font-family:garamond,arial"><i class="fa-sharp fa-solid fa-droplet"></i> Donate </button></a><br><br>
+            <h5>Donate Blood</h5>
+            <p>Save millions of life that you don't see.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+          <img src="static\images\carousal2.png" class="d-block w-100" alt="rbc">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Every Drop of Blood Counts</h5>
+            <p>Lets not waste the blood that however is getting destroyed within 120days.</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="static\images\carousal3.png" class="d-block w-100" alt="contribute">
+          <div class="carousel-caption d-none d-md-block">
+            <a href="signin" target="_self"><button type="button" class="btn btn-dark rounded-pill" style="font-size:22px;font-family:garamond,arial"><i class="fa-sharp fa-solid fa-droplet"></i> Donate </button></a><br><br>
+            <h5>Contribute to the world</h5>
+            <p>What holds us all together is the blood group despite any differences.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div><br>
+    <div class="row" style="text-align:center;">
+      <div class="col-md-2"><img src=""> </div>
+      <div class="col-md-7" style="text-align:center;">
+        <h4><b><i>Importance of Blood Donation</i></b></h4>
+        <h6>The Importance of Blood Donation goes a long way more than helping other people. However, the key reason for everyone to keep encouraging to donate blood is to save lives for sure.</h6>
+        <h6>Donating blood not only helps saving lives you never ever met. But also helps in keeping your body in a great condition. It is told by the scientists that if you donate blood the more the fresh blood circulates inside your blood. Donating blood has also this great good thing of produces more of new RBCs from your bone marrow and thus makes you fresh and keeps you healthy.</h6>
+      </div>
+    </div><br>
+    <div class="row">
+      <div class="col-md-6"><br>
+        <img src="/static/images/nevonprocedure.png" width="700" height="500">
+      </div>
+      <div class="col-md-6">
+        <h4 style="background-color:#FFE4E1;padding-top:15px;padding-left:10px;"><b>What's New in our Foundation?</b></h4>
+        <h6>We have introduced a new way of donating blood for those who will not be able to travel to the nearby Hospitals or Camps.</h6>
+        <h6>And here it is! <b>We can reach out to your home anytime to collect your blood</b> and store it to the nearby blood banks for future use. This can be useful for people who are wanting to donate blood but aren't available to travel to the hospitals. Use this opporunity wisely to contribute to the world.</h6>
+        <h6 style="background-color:#FFE4E1;padding-top:10px;padding-left:10px;"><b>Procedure</b></h6>
+        <h6>You give us a donor request where you can also mention that you want to donate being at home and send us your location at our website. We view your home donation request and arrange our staff to come to your home and collect blood. Once your blood is collected we give it to the nearby Hospital/Camp. If you are unsure about which hospital you're blood is being submitted, No Worries! <b>We send you a message of the details to which blood bank you blood is being sent.</b></h6>
+      </div><br>
+    </div><br>
+    <div class="row">
+      <div class="col-md-5" style="background-color:#FFE4E1;margin:10px;padding-top:10px;">
+        <h4><b>Proud Donors</b></h4>
+      </div>
+    </div>
+    <div class="row"  style="margin-left:40px;" >
+      <div class="col-md-3" style="margin:40px;">
+          <img src="/static/images/donor1.jfif" width="360" height="250">
+      </div>
+      <div class="col-md-3" style="margin:40px;">
+          <img src="/static/images/donor3.jfif" width="360" height="250">
+      </div>
+      <div class="col-md-3" style="margin:40px;">
+          <img src="/static/images/donor2.jfif" width="360" height="250">
+      </div>
+    </div>
+
+</body>
+{% endblock %}
+</html>

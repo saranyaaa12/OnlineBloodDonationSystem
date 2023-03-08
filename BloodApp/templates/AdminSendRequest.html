@@ -1,0 +1,109 @@
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Foundation</title>
+</head>
+<body>
+<div class="row" style="margin-left:0px;margin-top:8px;">
+    <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="adminprofile" style="text-decoration:none; color:white;">Home</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="addhospitals" style="text-decoration:none; color:white;">Add Hospitals</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="bloodrequest" style="text-decoration:none; color:white;">Blood Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="donorrequest" style="text-decoration:none; color:white;">Donor Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="adminsendrequest" style="text-decoration:none; color:white;">Send Request</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="getusers" style="text-decoration:none; color:white;">Edit Users</a></p>
+        </div>
+    </div>
+<!--  -------------- MAIN CONTENT ---------------- -->
+    <div class="col-md-8" align="center">
+        <h2>Send Blood Requests</h2>
+            <div>
+                <form class="row g-2" action="funcadminsendrequest" method="post" style="text-align:left;">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="p_name" class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" id="p_name" name="p_name">
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+                          <label for="p_age" class="form-label">Age</label>
+                          <input type="text" class="form-control" id="p_age" name="p_age">
+                      </div></div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <label for="p_gender" class="form-label">Gender</label>
+                          <select class="form-select" id="p_gender" aria-label=" select example" name="p_gender">
+                              <option selected disabled>Select One</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Transgender">Transgender</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <label for="p_contact" class="form-label">Contact Number (+91)</label>
+                          <input type="tel" class="form-control" name="p_contact" id="p_contact">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <label for="p_blood_needed" class="form-label">Blood Group</label>
+                            <select class="form-select" aria-label=" select example" name="p_blood_needed" id="p_blood_needed">
+                                <option value="Select" selected disabled>Select</option>
+                                <option value="A+">A+</option>
+                                <option value="B+">B+</option>
+                                <option value="O+">O+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="B-">B-</option>
+                                <option value="O-">O-</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                          <!--<input type="text" class="form-control" name="d_bloodgroup" id="d_bloodgroup">-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <label for="p_reason" class="form-label">Reason / Health Issue(s)</label>
+                          <input type="text" class="form-control" name="p_reason" id="p_reason">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                          <label for="p_location" class="form-label">Patient Location (Admitted in)</label>
+                          <input type="text" class="form-control" name="p_location" id="p_location">
+                        </div>
+                    </div>
+                  <div class="row">
+                      <div class="col-md-8"><br>
+                          <button type="submit" class="btn btn-danger">Send Request</button>
+                      </div>
+                  </div>
+                </form>
+                  <div class="row">
+                      {% for m in messages %}
+                      <div class="col-md-8"><br>
+                          <h5 style="text-align:center;color:#198754">{{ m }}</h5>
+                      </div>
+                      {% endfor %}
+                  </div>
+            </div><br>
+    </div>
+</div><br><br>
+</body>
+{% endblock %}

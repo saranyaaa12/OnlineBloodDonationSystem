@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Foundation</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6">
+        <img src="/static/images/nevonLogo-nobg.png" alt="logo" width="600" height="380" style="padding:20px 0px 0px 90px;">
+    </div>
+    <div class="col-md-6"><br><br>
+        <h2>Hello Admin!</h2><br>
+        <div>
+            <form class="row g-2" action="funcadminsignin" method="post" style="text-align:left">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="username" class="form-label">User Name</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" name="password" id="password">
+                  </div>
+              </div>
+                {% for m in messages %}
+                    <p>{{ m }}<sup style="color:red;">*</sup></p>
+                {% endfor %}
+              <div class="row">
+                  <div class="col-md-4"><br>
+                      <button type="submit" class="btn btn-success">Sign In</button>
+                  </div>
+              </div>
+            </form>
+        </div><br>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>

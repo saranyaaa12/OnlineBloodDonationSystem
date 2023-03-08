@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Foundation</title>
+</head>
+<body><br>
+<div class="row g-2">
+    <div class="col-md-8" style="margin-left:20px;"><br>
+        <p>Here are the list of hospitals where you can get the help of blood banks.</p>
+    <table class="table table-striped table-light">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Hospital Name/Camp</th>
+            <th>Area/Locality</th>
+            <th>Contact Number</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i in res %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.hospital}}</td>
+            <td>{{i.area}}</td>
+            <td>{{i.contact}}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    </div>
+    <div class="col-md-3" style="margin-left:60px;"><br>
+        <a href="signin"><img src="/static/images/donate.png" width="300" height="300"></a>
+    </div>
+</div><br>
+</body>
+{% endblock %}
+</html>

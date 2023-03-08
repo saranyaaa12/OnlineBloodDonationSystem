@@ -1,0 +1,71 @@
+{% extends 'Index.html' %}
+{% block content %}
+<head>
+    <style>
+        h2{
+            text-align:center;
+            font-size:50px;
+            color:#2D2124;
+            background-color:#FFE4E1;
+            padding:20px;
+        }
+        p {
+            font-size:20px;
+        }
+        h4 {
+          font:35px bold;
+          color:#BC1000;
+        }
+        .phototext{
+          font-size:16px;
+          color:#2D2124;
+          text-align:center;
+        }
+    </style>
+</head>
+<body><br>
+<h2>NEVON FOUNDATION</h2>
+<div class="row" style="margin:20px;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <br>
+        <h4>Connect with us Now!</h4>
+        <br>
+        <form class="row g-3" action="funccontact" method="post">
+            {% csrf_token %}
+          <div class="col-md-6">
+            <label for="fname" class="form-label">First Name<sup style="color:#BC1000;">*</sup></label>
+            <input type="text" class="form-control" id="fname" required>
+          </div>
+          <div class="col-md-6">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lname">
+          </div>
+          <div class="col-md-6">
+            <label for="mobile" class="form-label">Mobile Number<sup style="color:#BC1000;">*</sup></label>
+            <input type="tel" class="form-control" id="mobile" required>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email Id<sup style="color:#BC1000;">*</sup></label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="col-12">
+            <label for="area" class="form-label">Area/Locality</label>
+            <input type="text" class="form-control" id="area" placeholder="Vadapalani, Chennai">
+          </div>
+            <div class="col-12">
+                <label for="subject" class="form-label">Based On</label>
+                <input type="text" class="form-control" id="subject" placeholder="A small query regarding your foundation">
+            </div>
+            <div class="col-12">
+              <label for="comment">Message<sup style="color:#BC1000;">*</sup></label>
+              <textarea class="form-floating form-control" placeholder="Leave a comment here" id="comment" style="height: 100px" required></textarea>
+            </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+    </div>
+</div><br>
+</body>
+{% endblock %}

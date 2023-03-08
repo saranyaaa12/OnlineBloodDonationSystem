@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Foundation</title>
+    <link href="static/css/usersidebar.css" rel="stylesheet">
+    <style>
+        #map{
+            height:30px;
+            width:600px;
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER HERE  -->
+<!-- BODY CONTENT -->
+<div class="navigation">
+    <ul>
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="userprofile">
+                <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                <span class="title">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="userviewhospital">
+                <span class="icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                <span class="title">View Hospitals</span>
+            </a>
+        </li>
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="userbloodrequest">
+                <span class="icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
+                <span class="title">View Blood Requests</span>
+            </a>
+        </li>
+        <li class="list active">
+            <b></b>
+            <b></b>
+            <a href="bothrequests">
+                <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                <span class="title">Send Requests</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h6 style="text-align:right; background-color:#2D2123;padding:18px;margin-top:5px;color:white;font-size:18px"><i class="fa-solid fa-user"></i></h6>
+
+<input type="checkbox" id="check">
+<label for="check">
+        <i class="fa fa-bars" id="btn"></i>
+        <i class="fa fa-times" id="close"></i>
+</label>
+
+<div class="navigation col-md-3">
+    <header>MENU</header>
+    <ul>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userprofile">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userviewhospital">
+                <span class="icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                <span class="title">View Hospitals</span>
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userbloodrequest">
+                <span class="icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
+                <span class="title">View Blood Requests</span>
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="bothrequests">
+                <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                <span class="title">Send Requests</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--<div class="row" style="margin-left:0px;margin-top:8px;margin-bottom:8px;">
+    <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="userprofile" style="text-decoration:none; color:white;font-size:18px;">Home</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="userviewhospital" style="text-decoration:none; color:white;font-size:18px;">View Hospitals</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="userbloodrequest" style="text-decoration:none; color:white;font-size:18px;">View Blood Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="bothrequests" style="text-decoration:none; color:white;font-size:18px;">Send Requests</a></p>
+        </div>
+    </div>-->
+<div id="maincontent">
+    <div class="row" align="center">
+        <h2><b>Send Donor Requests</b></h2>
+      <div class="col-md-3"><img src=""> </div>
+      <div class="col-md-8" align="center">
+            <div>
+                <form class="row g-2" action="funcuserdonorrequest" method="post" style="text-align:left;">
+                    {% csrf_token %}
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                            <label for="d_name" class="form-label">Donor Name</label>
+                            <input type="text" class="form-control" id="d_name" name="d_name">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                      <div class="col-md-8">
+                          <label for="d_age" class="form-label">Age</label>
+                          <input type="text" class="form-control" id="d_age" name="d_age">
+                      </div></div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="d_gender" class="form-label">Gender</label>
+                          <select class="form-select" id="d_gender" aria-label=" select example" name="d_gender">
+                              <option selected disabled>Select One</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Transgender">Transgender</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="d_contact" class="form-label">Contact Number (+91)</label>
+                            <!--<select name="country_code">
+                              <option value="+91" selected>+91 (India)</option>
+                               Add more options as needed
+                            </select>-->
+                            <input type="tel" class="form-control" name="d_contact" id="d_contact" placeholder="+91xxxxxxxxxx">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="d_bloodgroup" class="form-label">Blood Group</label>
+                            <select class="form-select" aria-label=" select example" name="d_bloodgroup" id="d_bloodgroup">
+                                <option value="Select" selected disabled>Select</option>
+                                <option value="A+">A+</option>
+                                <option value="B+">B+</option>
+                                <option value="O+">O+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="B-">B-</option>
+                                <option value="O-">O-</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                          <!--<input type="text" class="form-control" name="d_bloodgroup" id="d_bloodgroup">-->
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="d_healthissues" class="form-label">Any Health Issue(s)</label>
+                          <input type="text" class="form-control" placeholder="Eg: Cancer, Glucose, Anemia, etc. If healthy, please provide No/None" name="d_healthissues" id="d_healthissues">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="d_visit" class="form-label">Will you be able to visit the nearby hospital for donation?</label>
+                          <select class="form-select" name="d_visit" id="d_visit">
+                              <option value="Select your option" selected disabled>Select Your Option</option>
+                              <option value="yes">Yes</option>
+                              <option value="no">No</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="row">       <!--NEED TO PROVIDE YES / NO FOR HOME DONATION : IF YES THEN ASK FOR LOCATION WITH MAPS/GPS-->
+                        <div class="col-md-8">
+                          <label for="d_location" class="form-label" style="display:none;">Donor Home Address</label>
+                            <textarea class="form-control" name="d_location" id="d_location" style="display:none;"></textarea>
+                        </div>
+                        <div class="col-md-1">
+                            <p style="display:none;text-align:center;padding-top:50px" id="or">OR</p>
+                        </div>
+                        <div class="col-md-3">
+                             <a href="#" id="d_link" onclick="getLocation()" class="btn btn-primary" style="display:none;text-align:center;margin-top:45px">{{ api }}Your Current Location</a>
+                             <p id="map" style="display:none; "></p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;text-align:center;">
+                          <div class="col-md-8"><br>
+                              <button type="submit" class="btn btn-danger">Send Request</button><br><br>
+                              {% for m in messages %}
+                              <h4 style="font:25px bold;color:green;">{{ m }}</h4>
+                              {% endfor %}
+                          </div>
+                    </div>
+                </form>
+            </div>
+    </div><br><br>
+    </div><br>
+
+
+    <script type="text/javascript">
+
+        $('#d_visit').change(function(){
+            if ($('form #d_visit option:selected').val() == 'no'){
+                $('label[for=d_location]').show();
+                $('#d_location').show();
+                $('#or').show();
+                $('#d_link').show();
+                $('#map').show();
+            }
+            else{
+                $('label[for=d_location]').hide();
+                $('#d_location').hide();
+                $('#or').hide();
+                $('#d_link').hide();
+                $('#map').hide();
+            }
+        });
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showLocationLink);
+          } else {
+            document.getElementById("map").innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        function showLocationLink(position) {
+          var latitude = position.coords.latitude;
+          var longitude = position.coords.longitude;
+          var link = "https://www.google.com/maps/search/?api=1&query=" + latitude + "," + longitude;
+          document.getElementById("map").innerHTML = "<a href='" + link + "' target='_blank'>Location Link saved!</a>";
+        }
+
+    </script>
+</div>
+</body>
+{% endblock %}
+</html>

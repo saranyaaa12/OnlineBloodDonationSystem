@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+{% extends 'Index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Blood Donation</title>
+    <style>
+        form{
+             text-align:left;
+        }
+    </style>
+</head>
+<body><br>
+<div class="row">
+    <div class="col-md-6">
+        <img src="/static/images/nevonLogo-nobg.png" alt="logo" width="650" height="500" style="padding:100px 0px 0px 50px;">
+    </div>
+    <div class="col-md-6">
+        <h2>Registration Form</h2><br>
+        <form class="row g-2" action="funcregisters" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="full_name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="full_name" name="full_name">
+                </div>
+                  <div class="col-md-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><br>
+                    <label for="age" class="form-label">Age</label>
+                    <input type="text" class="form-control" id="age" name="age">
+                </div>
+                  <div class="col-md-4"><br>
+                    <label for="gender" class="form-label">Gender</label>
+                    <select class="form-select" id="gender" aria-label=" select example" name="gender">
+                      <option selected>Select One</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Transgender">Transgender</option>
+                    </select>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><br>
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+                <div class="col-md-4"><br>
+                    <label for="cpassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="cpassword" name="cpassword">
+                </div>
+            </div>
+          <div class="row">
+              <div class="col-md-4"><br>
+                <label for="phone" class="form-label">Mobile</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="91+ XXXXXXXXXX">
+              </div>
+              <div class="col-md-4"><br>
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4"><br>
+                <label for="blood" class="form-label">Blood Group</label>
+                <input type="text" class="form-control" id="blood" name="blood">
+              </div>
+              <div class="col-md-4"><br>
+                <label for="zip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="zip" name="zip">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4"><br>
+                 <label for="health" class="form-label">Any Health Issues?</label>
+                <input type="text" class="form-control" id="health" name="health">
+             </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                      {% for m in messages %}
+                        <p style="font-size:12px;color:#2D2123">{{ m }}</p>
+                      {% endfor %}
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-4"><br>
+                <button type="submit" class="btn btn-success">Sign Up</button>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-4">
+                  <h6 style="font-size:20px">Existing User? <a href="signin">Sign In</a></h6>
+              </div>
+          </div>
+        </form><br>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>

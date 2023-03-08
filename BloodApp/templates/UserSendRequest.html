@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% extends 'ProfileIndex.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nevon Foundation</title>
+    <link href="static/css/usersidebar.css" rel="stylesheet">
+</head>
+<body>
+<!-- HEADER HERE  -->
+<!-- BODY CONTENT -->
+<div class="navigation">
+    <ul>
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="userprofile">
+                <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                <span class="title">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="userviewhospital">
+                <span class="icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                <span class="title">View Hospitals</span>
+            </a>
+        </li>
+        <li class="list">
+            <b></b>
+            <b></b>
+            <a href="userbloodrequest">
+                <span class="icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
+                <span class="title">View Blood Requests</span>
+            </a>
+        </li>
+        <li class="list active">
+            <b></b>
+            <b></b>
+            <a href="bothrequests">
+                <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                <span class="title">Send Requests</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<h6 style="text-align:right; background-color:#2D2123;padding:18px;margin-top:5px;color:white;font-size:18px"><i class="fa-solid fa-user"></i></h6>
+
+<input type="checkbox" id="check">
+<label for="check">
+        <i class="fa fa-bars" id="btn"></i>
+        <i class="fa fa-times" id="close"></i>
+</label>
+
+<div class="navigation col-md-3">
+    <header>MENU</header>
+    <ul>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userprofile">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                Home
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userviewhospital">
+                <span class="icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                <span class="title">View Hospitals</span>
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="userbloodrequest">
+                <span class="icon"><i class="fa fa-tint" aria-hidden="true"></i></span>
+                <span class="title">View Blood Requests</span>
+            </a>
+        </li>
+        <li>
+            <b></b>
+            <b></b>
+            <a href="bothrequests">
+                <span class="icon"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+                <span class="title">Send Requests</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!--<div class="row" style="margin-left:0px;margin-top:8px;margin-bottom:8px;">
+    <div class="col-md-2 aclass" style="background-color:#800000;font-size:20px;padding:80px 12px 80px 12px;">
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="userprofile" style="text-decoration:none; color:white;font-size:18px;">Home</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;" >
+            <p><a href="userviewhospital" style="text-decoration:none; color:white;font-size:18px;">View Hospitals</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="#" style="text-decoration:none; color:white;font-size:18px;">View Blood Requests</a></p>
+        </div>
+        <div class="row" style="border: 3px solid #800000;padding:10px 10px 0px 30px;background-color:grey;">
+            <p><a href="bothrequests" style="text-decoration:none; color:white;font-size:18px;">Send Requests</a></p>
+        </div>
+    </div>-->
+<div id="maincontent">
+    <div class="row" align="center">
+          <h2><b>Send Blood Requests</b></h2>
+      <div class="col-md-3"><img src=""> </div>
+      <div class="col-md-8" align="center">
+            <div>
+                <form class="row g-2" action="funcusersendrequest" method="post" style="text-align:left;">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label for="p_name" class="form-label">Patient Name</label>
+                            <input type="text" class="form-control" id="p_name" name="p_name">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                      <div class="col-md-8">
+                          <label for="p_age" class="form-label">Age</label>
+                          <input type="text" class="form-control" id="p_age" name="p_age">
+                      </div></div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="p_gender" class="form-label">Gender</label>
+                          <select class="form-select" id="p_gender" aria-label=" select example" name="p_gender">
+                              <option selected disabled>Select One</option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Transgender">Transgender</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="p_contact" class="form-label">Contact Number</label>
+                          <input type="tel" class="form-control" name="p_contact" id="p_contact">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="p_blood_needed" class="form-label">Blood Group</label>
+                            <select class="form-select" aria-label=" select example" name="p_blood_needed" id="p_blood_needed">
+                                <option value="Select" selected disabled>Select</option>
+                                <option value="A+">A+</option>
+                                <option value="B+">B+</option>
+                                <option value="O+">O+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="B-">B-</option>
+                                <option value="O-">O-</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                          <!--<input type="text" class="form-control" name="d_bloodgroup" id="d_bloodgroup">-->
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="p_reason" class="form-label">Reason / Health Issue(s)</label>
+                          <input type="text" class="form-control" name="p_reason" id="p_reason">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;">
+                        <div class="col-md-8">
+                          <label for="p_location" class="form-label">Patient Location (Admitted in)</label>
+                          <input type="text" class="form-control" name="p_location" id="p_location">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom:20px;text-align:center;">
+                          <div class="col-md-8"><br>
+                              <button type="submit" class="btn btn-danger">Send Request</button><br><br>
+                              {% for m in messages %}
+                              <h4 style="font:25px bold;color:green;">{{ m }}</h4>
+                              {% endfor %}
+                          </div>
+                    </div>
+                </form>
+            <br>
+      </div>
+      </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>

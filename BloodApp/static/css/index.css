@@ -1,0 +1,32 @@
+/*  HOME BODY HEADING CONTENT  */
+h4 {
+    font-family:'Garamond','Arial';
+    font-size:30px;
+}
+/*  FOOTER CONTENT  */
+h5 {
+    font-family:'Garamond','Arial';
+    font-size:30px;
+}
+/*  HOME BODY CONTENT  */
+h6 {
+   font-family:'Garamond','Arial';
+   font-size:25px;
+}
+
+.fade-in{
+    width: 100%;
+    margin-top:10%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.fade-in h6{
+    font-family:'Open sans',sans-serif;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform: translateY(0);
+}
